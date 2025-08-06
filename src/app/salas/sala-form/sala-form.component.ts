@@ -70,7 +70,7 @@ export class SalaFormComponent implements OnInit{
           'Cerrar',
           { duration: 3000 }
         );
-        this.router.navigate(['/peliculas'], { skipLocationChange: true });
+        this.router.navigate(['/salas'], { skipLocationChange: true });
       },
       error: (err: HttpErrorResponse) => {
         console.log('Error 400:', err.error);
