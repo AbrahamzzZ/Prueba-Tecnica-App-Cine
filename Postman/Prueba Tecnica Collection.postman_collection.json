@@ -1,0 +1,443 @@
+{
+	"info": {
+		"_postman_id": "0ef07c7b-dde1-45e6-bab6-4bec038287c0",
+		"name": "My Collection",
+		"description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "47395148",
+		"_collection_link": "https://abrahamzzz-2278037.postman.co/workspace/AbrahamZzz's-Workspace~ff83ecd9-a653-4239-8151-1e868571d673/collection/47395148-0ef07c7b-dde1-45e6-bab6-4bec038287c0?action=share&source=collection_link&creator=47395148"
+	},
+	"item": [
+		{
+			"name": "http://localhost:5148/api/Pelicula",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{http://localhost:5148/}}/api/Pelicula",
+					"host": [
+						"{{http://localhost:5148/}}"
+					],
+					"path": [
+						"api",
+						"Pelicula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/Pelicula/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/Pelicula/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"Pelicula",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/Pelicula/nombre/pelicula%20insana",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/Pelicula/nombre/pelicula%20insana",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"Pelicula",
+						"nombre",
+						"pelicula%20insana"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/PeliculaSalaCine",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/PeliculaSalaCine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"PeliculaSalaCine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/PeliculaSalaCine/fecha-publicacion/2025-08-5",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/PeliculaSalaCine/fecha-publicacion/2025-08-5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"PeliculaSalaCine",
+						"fecha-publicacion",
+						"2025-08-5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/SalaCine",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/SalaCine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"SalaCine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/SalaCine/4",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/SalaCine/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"SalaCine",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/SalaCine/nombre/Sala%20Estelar",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/SalaCine/nombre/Sala%20Estelar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"SalaCine",
+						"nombre",
+						"Sala%20Estelar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/Pelicula/3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/Pelicula/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"Pelicula",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/SalaCine/3",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5148/api/SalaCine/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"SalaCine",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/SalaCine",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "\tapplication/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idSala\": 0,\r\n  \"nombre\": \"Sala SuperGigante\",\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5148/api/SalaCine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"SalaCine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/Pelicula",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idPelicula\": 0,\r\n  \"nombre\": \"Pelicula II\",\r\n  \"duracion\": 160,\r\n  \"estado\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5148/api/Pelicula",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"Pelicula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/PeliculaSalaCine",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"idPeliculaCine\": 0,\r\n  \"idSalaCine\": 6,\r\n  \"fechaPublicacion\": \"2025-08-06\",\r\n  \"fechaFin\": \"2025-10-01\",\r\n  \"idPelicula\": 14\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5148/api/PeliculaSalaCine",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"PeliculaSalaCine"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/Pelicula/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"idPelicula\": 2,\r\n    \"nombre\": \"Pelicula Insana III\",\r\n    \"duracion\": 90,\r\n    \"estado\": true\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5148/api/Pelicula/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"Pelicula",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:5148/api/SalaCine/2",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n    \"idSala\": 2,\r\n    \"nombre\": \"Sala Sur\",\r\n    \"estado\": true\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5148/api/SalaCine/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5148",
+					"path": [
+						"api",
+						"SalaCine",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "http://localhost:5148/",
+			"value": "http://localhost:5148",
+			"type": "default"
+		}
+	]
+}
