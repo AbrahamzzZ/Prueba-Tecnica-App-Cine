@@ -1,4 +1,5 @@
 # AppCine
+Para clonar el respositorio ejecute este comando: git clone --recurse-submodules https://github.com/AbrahamzzZ/Prueba-Tecnica.git 
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.11.
 
