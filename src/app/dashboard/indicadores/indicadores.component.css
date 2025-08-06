@@ -1,0 +1,13 @@
+.dashboard-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+
+.dashboard-card {
+  width: 250px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}

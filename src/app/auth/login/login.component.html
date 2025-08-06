@@ -1,0 +1,31 @@
+<div class="login-container">
+  <mat-card>
+    <mat-card-title>Login</mat-card-title>
+
+    <form [formGroup]="formLogin">
+      <mat-card-content>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Correo Electronico</mat-label>
+          <input matInput type="text" formControlName="correo" />
+          @if(formLogin.get('correo')?.hasError('required')){
+            <mat-error>El correo es obligatorio</mat-error>
+          }@else if(formLogin.get('correo')?.hasError('email')){
+            <mat-error>Correo inválido</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="clave" />
+          @if (formLogin.get('clave')?.hasError('required')) {
+            <mat-error>La contraseña es obligatoria</mat-error>
+          }
+        </mat-form-field>
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button mat-raised-button color="primary" (click)="login()">Ingresar</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

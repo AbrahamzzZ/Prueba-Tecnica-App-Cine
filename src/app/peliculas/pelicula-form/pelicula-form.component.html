@@ -1,0 +1,42 @@
+<mat-card>
+  <mat-card-title>Formulario Peliculas</mat-card-title>
+
+    <form [formGroup]="formPelicula">
+        <mat-card-content>
+            <mat-form-field appearance="fill" class="full-width" >
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" formControlName="nombre">
+                @if(formPelicula.get('nombre')?.hasError('required')){
+                    <mat-error>El nombre es obligatorio</mat-error>
+                }
+            </mat-form-field>
+
+            <mat-form-field appearance="fill" class="full-width" >
+                <mat-label>Duracion (minutos)</mat-label>
+                <input matInput type="number" formControlName="duracion">
+                @if(formPelicula.get('duracion')?.hasError('required')){
+                    <mat-error>La duracion es obligatoria</mat-error>
+                }@else if (formPelicula.get('duracion')?.hasError('min')) {
+                  <mat-error>Pelicula con muy corta duración</mat-error>
+                }@else if (formPelicula.get('duracion')?.hasError('max')) {
+                  <mat-error>Pelicula con muy demasiada duración</mat-error>
+                }
+            </mat-form-field>
+
+          <mat-checkbox formControlName="estado">Activo</mat-checkbox>
+
+        </mat-card-content>
+
+        <mat-card-actions>
+          <button class="form__button" mat-raised-button color="primary" type="button" (click)="registrarPelicula()">
+            {{ idPelicula ? 'Guardar Cambios' : 'Registrar' }}
+          </button>
+
+          <button class="form__button" mat-raised-button color="accent" type="button" (click)="regresar()">
+            Regresar
+          </button>
+        </mat-card-actions>
+    </form>
+ 
+</mat-card>
+

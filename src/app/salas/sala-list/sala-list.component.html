@@ -1,0 +1,112 @@
+<div class="container">
+  <h1 class="container__title">Salas del cine</h1>
+
+  <div class="container__table">
+    <div class="container__search">
+
+    <!--<mat-form-field class="container__search__input" appearance="outline">
+          <mat-label>Buscar salas</mat-label>
+          <input
+            matInput
+            #searchInput
+            (keyup)="filtrarSalas(searchInput.value)"
+            placeholder="Buscar salas por varios criterios."
+          />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>-->
+        
+      <mat-form-field class="container__search__input" appearance="outline">
+        <mat-label>Buscar estado de la sala</mat-label>
+        <input
+          matInput
+          [(ngModel)]="nombreBuscado"
+          (keyup.enter)="buscarEstadoSala()"
+          placeholder="Escribe el nombre exacto de la sala y presiona Enter"
+        />
+      </mat-form-field>
+
+      <button class="container__search__button" mat-raised-button color="primary" (click)="buscarEstadoSala()">
+        <mat-icon matSuffix>search</mat-icon>Buscar
+      </button>
+      
+
+      @if (mensajeEstado) {
+        <div class="container__estado-mensaje">
+          <mat-card>
+            <mat-card-title>Estado de la Sala</mat-card-title>
+            <mat-card-content>
+              <p>{{ mensajeEstado }}</p>
+            </mat-card-content>
+          </mat-card>
+        </div>
+      }
+
+      <button class="container__search__button" mat-raised-button color="primary" (click)="nuevo()">
+        <mat-icon>add_circle</mat-icon> Registrar sala
+      </button>
+    </div>
+
+    <table class="table" mat-table [dataSource]="listaSalas">
+      <!-- No. -->
+      <ng-container matColumnDef="idSala">
+        <th class="table__header" mat-header-cell *matHeaderCellDef>No.</th>
+        <td class="table__cell" mat-cell *matCellDef="let element">{{ element.idSala }}</td>
+      </ng-container>
+
+      <!-- Nombre -->
+      <ng-container matColumnDef="nombre">
+        <th class="table__header" mat-header-cell *matHeaderCellDef>Nombre</th>
+        <td class="table__cell" mat-cell *matCellDef="let element">{{ element.nombre }}</td>
+      </ng-container>
+
+      <!-- Estado -->
+      <ng-container matColumnDef="estado">
+        <th class="table__header" mat-header-cell *matHeaderCellDef>Estado</th>
+        <td
+          class="table__cell"
+          mat-cell
+          *matCellDef="let element"
+          [ngClass]="{
+            'table__estado-activo': element.estado,
+            'table__estado-no-activo': !element.estado
+          }"
+        >
+          {{ getEstado(element.estado) }}
+        </td>
+      </ng-container>
+
+      <!-- Acciones -->
+      <ng-container matColumnDef="accion">
+        <th class="table__header" mat-header-cell *matHeaderCellDef>Acción</th>
+        <td class="table__cell" mat-cell *matCellDef="let element">
+          <button mat-icon-button color="accent" (click)="editar(element)">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button mat-icon-button color="warn" (click)="eliminar(element)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      [length]="listaSalas.data.length"
+      [pageSize]="5"
+      [pageSizeOptions]="[5, 10, 20]"
+      showFirstLastButtons
+    ></mat-paginator>
+
+    @if (listaSalas.data.length === 0) {
+      <div class="container__message">
+        <mat-icon class="container__message__icon">info_outline</mat-icon>
+        <span class="container__message__text">No hay categorías que mostrar.</span>
+      </div>
+    }
+  </div>
+</div>
+
+<router-outlet></router-outlet>
+  

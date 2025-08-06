@@ -1,0 +1,77 @@
+<div class="container">
+    <mat-card class="container__card">
+      <mat-card-header class="container__header">
+        <mat-card-title class="container__title">Asignar Peliculas a las salas de cine</mat-card-title>
+      </mat-card-header>
+  
+      <mat-card-content>
+        <form class="form" [formGroup]="formSalaPelicula">
+  
+          <mat-form-field class="form__field">
+            <mat-label>Seleccione una sala</mat-label>
+            <mat-select 
+              disableRipple 
+              formControlName="sala"
+              (selectionChange)="salaSeleccionada($event)">
+              @for (sala of salas; track $index) {
+                <mat-option [value]="sala.idSala">{{ sala.nombre }}</mat-option>
+              }
+            </mat-select>
+            @if(salaSeleccionadaField.hasError('required') || salaSeleccionadaField.hasError('min')){
+              <mat-error class="form__error">Debe seleccionar una sala.</mat-error>
+            }
+          </mat-form-field>
+
+            <mat-form-field class="form__field">
+                <mat-label>Seleccione una pelicula</mat-label>
+                <mat-select 
+                disableRipple 
+                formControlName="pelicula"
+                (selectionChange)="peliculaSeleccionada($event)">
+                @for (pelicula of peliculas; track $index) {
+                    <mat-option [value]="pelicula.idPelicula">{{ pelicula.nombre }}</mat-option>
+                }
+                </mat-select>
+                @if(preliculaSeleccionadaField.hasError('required') || preliculaSeleccionadaField.hasError('min')){
+                <mat-error class="form__error">Debe seleccionar una pelicula.</mat-error>
+                }
+            </mat-form-field>
+  
+          <mat-form-field class="form__field">
+            <mat-label>Fecha Publicación:</mat-label>
+             <input matInput [matDatepicker]="pickerPublicacion" formControlName="fechaPublicacion" />
+             <mat-datepicker-toggle matIconSuffix [for]="pickerPublicacion"></mat-datepicker-toggle>
+             <mat-datepicker #pickerPublicacion></mat-datepicker>
+             @if(fechaPublicacionField.hasError('required')){
+              <mat-error class="form__error">Campo obligatorio.</mat-error>
+            }
+          </mat-form-field>
+  
+          <mat-form-field class="form__field">
+            <mat-label>Fecha Fin:</mat-label>
+             <input matInput [matDatepicker]="pickerFin" formControlName="fechaFin" />
+             <mat-datepicker-toggle matIconSuffix [for]="pickerFin"></mat-datepicker-toggle>
+             <mat-datepicker #pickerFin></mat-datepicker>
+             @if(fechaFinField.hasError('required')){
+              <mat-error class="form__error">Campo obligatorio.</mat-error>
+            }@else if (formSalaPelicula.hasError('fechaFinInvalida')) {
+              <mat-error class="form__error">La fecha fin debe ser posterior a la fecha de publicación.</mat-error>
+            }
+          </mat-form-field>
+  
+          <button
+            class="form__button"
+            mat-raised-button
+            color="primary"
+            type="button"
+            (click)="asignarPeliculaSala()"
+          >
+            Registrar
+          </button>
+          <button class="form__button" mat-raised-button color="primary" type="button" (click)="regresar()">
+            Regresar
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+</div>
